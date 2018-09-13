@@ -1,0 +1,17 @@
+baseURL = "https://snippets.hanamirb.org/"
+title = "Hanami code snippets"
+copyright = "All rights reserved - 2018"
+paginate = 5
+languageCode = "en-us"
+theme = "ananke"
+
+pygmentscodefences = true
+pygmentsstyle = "dracula"
+
+[permalinks]
+  posts = "/:slug/"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5

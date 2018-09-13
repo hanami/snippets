@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# variables
+snippet=$1
+post=content/posts/$snippet.md
+code=tmp/$snippet.rb
+dir=static/covers
+
+# prepare
+mkdir -p $dir
+mkdir -p tmp
+
+# extract first code fence
+fences=($(grep -n "\`\`\`" $post | cut -d":" -f 1))
+
+starting=$((${fences[0]} + 1))
+ending=$((${fences[1]} - 1))
+
+# generate temporary code file
+sed -n "$((${fences[0]} + 1)),$((${fences[1]} - 1))p" $post > $code
+
+# rename with canonical name
+generated=$(find static -path "$dir/$snippet*")
+mv $generated $dir/$snippet.png
