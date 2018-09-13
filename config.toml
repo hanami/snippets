@@ -8,6 +8,10 @@ theme = "hanami"
 pygmentscodefences = true
 pygmentsstyle = "dracula"
 
+[taxonomies]
+   tag = "tags"
+   category = "discover"
+
 [permalinks]
   posts = "/:slug/"
 
