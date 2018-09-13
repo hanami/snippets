@@ -1,9 +1,9 @@
 baseURL = "https://snippets.hanamirb.org/"
-title = "Hanami code snippets"
+title = "Hanami | Snippets"
 copyright = "All rights reserved - 2018"
 paginate = 5
 languageCode = "en-us"
-theme = "ananke"
+theme = "hanami"
 
 pygmentscodefences = true
 pygmentsstyle = "dracula"
@@ -15,3 +15,9 @@ pygmentsstyle = "dracula"
   changefreq = "weekly"
   filename = "sitemap.xml"
   priority = 0.5
+
+[params]
+  facebook = "hanamirb"
+  twitter = "hanamirb"
+  instagram = "hanamirb"
+  github = "hanami/hanami"
