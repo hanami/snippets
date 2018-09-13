@@ -26,6 +26,21 @@ pygmentsstyle = "dracula"
   instagram = "hanamirb"
   github = "hanami/hanami"
 
+  gems = [
+   "hanami",
+   "events",
+   "model",
+   "assets",
+   "cli",
+   "mailer",
+   "helpers",
+   "view",
+   "controller",
+   "router",
+   "validations",
+   "utils",
+  ]
+
   [params.icons]
     utils = "fa-cogs"
     validations = "fa-check-square-o"
@@ -43,13 +58,13 @@ pygmentsstyle = "dracula"
   [params.colors]
     utils = "info"
     validations = "info"
-    router = "fa-sitemap"
+    router = "primary"
     controller = "primary"
     view = "primary"
     helpers = "info"
-    mailer = "success"
-    cli = "success"
-    assets = "success"
+    mailer = "warning"
+    cli = "warning"
+    assets = "info"
     model = "primary"
-    events = "success"
+    events = "warning"
     hanami = "danger"
