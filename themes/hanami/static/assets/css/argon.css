@@ -17244,6 +17244,30 @@ textarea[resize='horizontal']
 {
     background: #1fa2ff;
 }
+.section-shaped .shape-red
+{
+    background: linear-gradient(150deg, #dc3610 15%, #f37254 70%, #f9866b 94%);
+}
+.section-shaped .shape-red :nth-child(1)
+{
+    background: #53f;
+}
+.section-shaped .shape-red :nth-child(2)
+{
+    background: #4553ff;
+}
+.section-shaped .shape-red :nth-child(3)
+{
+    background: #4f40ff;
+}
+.section-shaped .shape-red :nth-child(4)
+{
+    background: #25ddf5;
+}
+.section-shaped .shape-red :nth-child(5)
+{
+    background: #1fa2ff;
+}
 .section-shaped .shape-default
 {
     background: linear-gradient(150deg, #7795f8 15%, #6772e5 70%, #555abf 94%);
