@@ -137,7 +137,7 @@
                     <p class="description mt-3">{{ .Content }}</p>
                     <div>
                     {{ range .Params.tags }}
-                      <a href="/tags/{{ . }}"><span class="badge badge-pill badge-{{ $color }}">{{ . }}</span></a>
+                      <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-{{ $color }}">{{ . }}</span></a>
                     {{ end }}
                     </div>
                     <!-- share -->
