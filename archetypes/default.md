@@ -4,7 +4,7 @@ preview: ""
 status: ""
 date: {{ .Date }}
 draft: true
-gem: "hanami"
+gems: ["hanami"]
 tags: []
 ---
 

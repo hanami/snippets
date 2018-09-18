@@ -137,8 +137,9 @@
             <div class="row row-grid">
             {{ range first 3 .Data.Pages }}
               {{if eq .Type "posts" }}
-              {{ $icon := index .Site.Params.Icons .Params.Gem }}
-              {{ $color := index .Site.Params.Colors .Params.Gem }}
+              {{ $gem := index .Params.Gems 0 }}
+              {{ $icon := index .Site.Params.Icons $gem }}
+              {{ $color := index .Site.Params.Colors $gem }}
                 <div class="col-lg-4">
                   <div class="card card-lift--hover shadow border-0">
                     <div class="card-body py-5">
@@ -188,7 +189,7 @@
                         </div>
                       </div>
                       <div>
-                        <h6 class="mb-0">{{ . }}</h6>
+                        <h6 class="mb-0"><a href="/gems/{{ . | urlize }}">{{ . }}</a></h6>
                       </div>
                     </div>
                   </li>

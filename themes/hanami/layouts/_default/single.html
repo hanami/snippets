@@ -127,8 +127,9 @@
               <div class="col-lg-12">
                 <div class="card shadow border-0">
                   <div class="card-body py-5">
-                    {{ $icon := index .Site.Params.Icons .Params.Gem }}
-                    {{ $color := index .Site.Params.Colors .Params.Gem }}
+                    {{ $gem := index .Params.Gems 0 }}
+                    {{ $icon := index .Site.Params.Icons $gem }}
+                    {{ $color := index .Site.Params.Colors $gem }}
                     <div class="icon icon-shape icon-shape-{{ $color }} rounded-circle mb-4">
                       <i class="fa {{ $icon }}"></i>
                     </div>

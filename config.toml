@@ -10,7 +10,7 @@ pygmentsstyle = "dracula"
 
 [taxonomies]
    tag = "tags"
-   category = "discover"
+   gem = "gems"
 
 [permalinks]
   posts = "/:slug/"
