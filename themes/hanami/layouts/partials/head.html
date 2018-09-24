@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  {{ with .Params.Preview }}
+  <meta name="description" content="{{ . }}"> <!-- snippet -->
+  {{ else }}
+    {{ if eq .Kind "taxonomy" }}
+      {{ with .Description }}
+  <meta name="description" content="{{ . }}"> <!-- gem -->
+      {{ else }}
+  <meta name="description" content="Hanami snippets tagged with {{ .Title }}"> <!-- tag -->
+      {{ end }}
+    {{ else }}
+  <meta name="description" content="{{ $.Site.Params.Description }}"> <!-- home page -->
+    {{ end }}
+  {{ end }}
+  <meta name="author" content="Hanami team">
+  {{ with .Params.Title }}
+  <title>{{ $.Site.Title }} | {{ . }}</title> <!-- snippet -->
+  {{ else }}
+    {{ if eq .Kind "taxonomy" }}
+  <title>{{ $.Site.Title }} | {{ .Title }}</title> <!-- gem or tag -->
+    {{ else }}
+  <title>{{ $.Site.Title }}</title> <!-- home page-->
+    {{ end }}
+  {{ end }}
+  <!-- Favicon -->
+  <link href="/assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="/assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="/assets/css/argon.css?v=1.0.1" rel="stylesheet">
+  <link type="text/css" href="/assets/css/theme.css" rel="stylesheet">
+  <!-- Docs CSS -->
+  <link type="text/css" href="/assets/css/docs.min.css" rel="stylesheet">
+</head>

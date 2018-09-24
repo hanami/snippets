@@ -21,6 +21,7 @@ pygmentsstyle = "dracula"
   priority = 0.5
 
 [params]
+  description = "Code snippets for Hanami Ruby web framework"
   facebook = "hanamirb"
   twitter = "hanamirb"
   instagram = "hanamirb"
