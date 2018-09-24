@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-{{ partial "head.html" . }}
-</head>
-
-<body>
-  {{ partial "header.html" . }}
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
     <section class="section section-lg pt-lg-0 mt--200">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="row row-grid">
-            {{ range first 3 .Data.Pages }}
-              {{if eq .Type "posts" }}
-              {{ $gem := index .Params.Gems 0 }}
-              {{ $icon := index .Site.Params.Icons $gem }}
-                <div class="col-lg-4">
-                  <div class="card card-lift--hover shadow border-0">
-                    <div class="card-body py-5">
-                      <div class="badge badge-circle badge-secondary icon icon-shape rounded-circle mb-4">
-                        <i class="fa {{ $icon }}"></i>
-                      </div>
-                      <h6 class="text-primary text-uppercase">{{ .Title }}</h6>
-                      <p class="description mt-3">{{ .Status | truncate 100 }}</p>
-                      <div>
-                        {{ range .Params.Tags }}
-                        <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-secondary">{{ . }}</span></a>
-                        {{ end }}
-                      </div>
-                      <a href="{{ .Permalink }}" class="btn btn-primary mt-4">Learn more</a>
+              {{ range first 3 .Data.Pages }}
+                {{if eq .Type "posts" }}
+                {{ $gem := index .Params.Gems 0 }}
+                {{ $icon := index .Site.Params.Icons $gem }}
+              <div class="col-lg-4">
+                <div class="card card-lift--hover shadow border-0">
+                  <div class="card-body py-5">
+                    <div class="badge badge-circle badge-secondary icon icon-shape rounded-circle mb-4">
+                      <i class="fa {{ $icon }}"></i>
                     </div>
+                    <h6 class="text-primary text-uppercase">{{ .Title }}</h6>
+                    <p class="description mt-3">{{ .Status | truncate 100 }}</p>
+                    <div>
+                      {{ range .Params.Tags }}
+                      <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-secondary">{{ . }}</span></a>
+                      {{ end }}
+                    </div>
+                    <a href="{{ .Permalink }}" class="btn btn-primary mt-4">Learn more</a>
                   </div>
                 </div>
+              </div>
                 {{ end }}
               {{ end }}
             </div>
@@ -55,19 +53,19 @@
               <p>We have snippets for all the Hanami components:</p>
               <ul class="list-unstyled mt-5">
                 {{ range .Site.Params.Gems }}
-                  {{ $icon := index $.Site.Params.icons . }}
-                  <li class="py-2">
-                    <div class="d-flex align-items-center">
-                      <div>
-                        <div class="badge badge-circle badge-secondary mr-3">
-                          <i class="fa {{ $icon }}"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <h6 class="mb-0"><a href="/gems/{{ . | urlize }}"><span class="text-primary">{{ . }}</span></a></h6>
+                {{ $icon := index $.Site.Params.icons . }}
+                <li class="py-2">
+                  <div class="d-flex align-items-center">
+                    <div>
+                      <div class="badge badge-circle badge-secondary mr-3">
+                        <i class="fa {{ $icon }}"></i>
                       </div>
                     </div>
-                  </li>
+                    <div>
+                      <h6 class="mb-0"><a href="/gems/{{ . | urlize }}"><span class="text-primary">{{ . }}</span></a></h6>
+                    </div>
+                  </div>
+                </li>
                 {{ end }}
               </ul>
             </div>
@@ -76,5 +74,5 @@
       </div>
     </section>
     {{ partial "footer.html" . }}
-</body>
+  </body>
 </html>
