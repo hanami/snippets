@@ -15,7 +15,7 @@
                   <div class="card-body py-5">
                     {{ $gem := index .Params.Gems 0 }}
                     {{ $icon := index .Site.Params.Icons $gem }}
-                      <div class="badge badge-circle badge-secondary icon icon-shape rounded-circle mb-4">
+                    <div class="badge badge-circle badge-secondary icon icon-shape rounded-circle mb-4">
                       <i class="fa {{ $icon }}"></i>
                     </div>
                     <h5 class="text-primary text-uppercase">{{ .Title }}</h5>
