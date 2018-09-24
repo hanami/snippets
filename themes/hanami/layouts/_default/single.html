@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-{{ partial "head.html" . }}
-</head>
-
-<body>
-  {{ partial "header.html" . }}
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
     <section class="section section-lg pt-lg-0 mt--200">
       <div class="container">
         <div class="row justify-content-center">
@@ -17,23 +15,22 @@
                   <div class="card-body py-5">
                     {{ $gem := index .Params.Gems 0 }}
                     {{ $icon := index .Site.Params.Icons $gem }}
-                    {{ $color := index .Site.Params.Colors $gem }}
-                    <div class="icon icon-shape icon-shape-{{ $color }} rounded-circle mb-4">
+                      <div class="badge badge-circle badge-secondary icon icon-shape rounded-circle mb-4">
                       <i class="fa {{ $icon }}"></i>
                     </div>
-                    <h5 class="text-{{ $color }} text-uppercase">{{ .Title }}</h5>
+                    <h5 class="text-primary text-uppercase">{{ .Title }}</h5>
                     <p class="description mt-3">{{ .Content }}</p>
                     <div>
-                    {{ range .Params.tags }}
-                      <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-{{ $color }}">{{ . }}</span></a>
-                    {{ end }}
+                      {{ range .Params.tags }}
+                      <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-secondary">{{ . }}</span></a>
+                      {{ end }}
                     </div>
                     <!-- share -->
-                    <a href="https://twitter.com/intent/tweet?text={{ .Params.Status }} {{ .Permalink }}" class="btn btn-{{ $color }} mt-4" target="_blank">
+                    <a href="https://twitter.com/intent/tweet?text={{ .Params.Status }} {{ .Permalink }}" class="btn btn-primary mt-4" target="_blank">
                       <span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
                       <span class="btn-inner--text">Twitter</span>
                     </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" class="btn btn-{{ $color }} mt-4">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" class="btn btn-primary mt-4">
                       <span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
                       <span class="btn-inner--text">Facebook</span>
                     </a>
@@ -46,6 +43,5 @@
       </div>
     </section>
     {{ partial "footer.html" }}
-</body>
-
+  </body>
 </html>

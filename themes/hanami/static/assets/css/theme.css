@@ -97,3 +97,7 @@ a.text-primary:focus
 {
     background: linear-gradient(87deg, #FF6138 0, #FFFF9D 100%) !important;
 }
+
+div.highlight > pre {
+  padding: 1em;
+}
