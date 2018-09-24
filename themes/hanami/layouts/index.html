@@ -74,10 +74,10 @@
             </li>
             <li class="nav-item d-none d-lg-block ml-lg-4">
               <a href="http://hanamirb.org/guides" target="_blank" class="btn btn-neutral btn-icon">
-                <span class="btn-inner--icon">
+                <span class="btn-inner--icon text-primary">
                   <i class="ni ni-spaceship mr-2"></i>
                 </span>
-                <span class="nav-link-inner--text">Get started</span>
+                <span class="nav-link-inner--text text-primary">Get started</span>
               </a>
             </li>
           </ul>
@@ -109,13 +109,13 @@
                 </h1>
                 <p class="lead  text-white">Learn Hanami by reading, short, curated, manually crafted <strong>code snippets</strong>.</p>
                 <div class="btn-wrapper">
-                  <a href="http://hanamirb.org" class="btn btn-info btn-icon mb-3 mb-sm-0">
+                  <a href="http://hanamirb.org" class="btn btn-primary btn-icon mb-3 mb-sm-0">
                     <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
                     <span class="btn-inner--text">Main website</span>
                   </a>
                   <a href="/discover" class="btn btn-white btn-icon mb-3 mb-sm-0">
-                    <span class="btn-inner--icon"><i class="ni ni-compass-04"></i></span>
-                    <span class="btn-inner--text">Discover snippets</span>
+                    <span class="btn-inner--icon text-primary"><i class="ni ni-compass-04"></i></span>
+                    <span class="btn-inner--text text-primary">Discover snippets</span>
                   </a>
                 </div>
               </div>
@@ -143,7 +143,7 @@
                 <div class="col-lg-4">
                   <div class="card card-lift--hover shadow border-0">
                     <div class="card-body py-5">
-                      <div class="icon icon-shape icon-shape-primary rounded-circle mb-4">
+                      <div class="badge badge-circle badge-secondary icon icon-shape rounded-circle mb-4">
                         <i class="fa {{ $icon }}"></i>
                       </div>
                       <h6 class="text-primary text-uppercase">{{ .Title }}</h6>
@@ -172,7 +172,7 @@
           </div>
           <div class="col-md-6 order-md-1">
             <div class="pr-md-5">
-              <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
+              <div class="badge badge-circle badge-secondary icon icon-shape rounded-circle mb-5">
                 <i class="ni ni-settings-gear-65"></i>
               </div>
               <h3>Learn by topic</h3>
@@ -180,16 +180,15 @@
               <ul class="list-unstyled mt-5">
                 {{ range .Site.Params.Gems }}
                   {{ $icon := index $.Site.Params.icons . }}
-                  {{ $color := index $.Site.Params.Colors . }}
                   <li class="py-2">
                     <div class="d-flex align-items-center">
                       <div>
-                        <div class="badge badge-circle badge-{{ $color }} mr-3">
+                        <div class="badge badge-circle badge-secondary mr-3">
                           <i class="fa {{ $icon }}"></i>
                         </div>
                       </div>
                       <div>
-                        <h6 class="mb-0"><a href="/gems/{{ . | urlize }}">{{ . }}</a></h6>
+                        <h6 class="mb-0"><a href="/gems/{{ . | urlize }}"><span class="text-primary">{{ . }}</span></a></h6>
                       </div>
                     </div>
                   </li>
@@ -202,7 +201,7 @@
     </section>
     <section class="section section-lg pt-0">
       <div class="container">
-        <div class="card bg-gradient-warning shadow-lg border-0">
+        <div class="card bg-gradient-learn-more shadow-lg border-0">
           <div class="p-5">
             <div class="row align-items-center">
               <div class="col-lg-8">
@@ -211,8 +210,8 @@
               </div>
               <div class="col-lg-3 ml-lg-auto">
                 <a href="http://hanamirb.org/guides" class="btn btn-lg btn-block btn-white">
-                  <span class="btn-inner--icon"><i class="ni ni-spaceship mr-2"></i></span>
-                  <span class="nav-link-inner--text">Get started</span>
+                  <span class="btn-inner--icon text-primary"><i class="ni ni-spaceship mr-2"></i></span>
+                  <span class="nav-link-inner--text text-primary">Get started</span>
                 </a>
               </div>
             </div>
@@ -248,7 +247,7 @@
           <div class="copyright">
             Hanami is a web framework for Ruby — 
             &copy; 2018
-            <a href="https://lucaguidi.com" target="_blank">Luca Guidi</a>
+            <a href="https://lucaguidi.com" target="_blank"><span class="text-primary">Luca Guidi</span></a>
           </div>
         </div>
         <div class="col-md-6">

@@ -12,15 +12,15 @@
 }
 .section-shaped .shape-hanami :nth-child(3)
 {
-    background: #4f40ff;
+    background: #FFFF9D;
 }
 .section-shaped .shape-hanami :nth-child(4)
 {
-    background: #25ddf5;
+    background: #BEEB9F;
 }
 .section-shaped .shape-hanami :nth-child(5)
 {
-    background: #1fa2ff;
+    background: #00A388;
 }
 
 .icon-shape-primary
@@ -92,4 +92,8 @@ a.text-primary:focus
 
     color: #212529;
     background-color: #d6dae2;
+}
+.bg-gradient-learn-more
+{
+    background: linear-gradient(87deg, #FF6138 0, #FFFF9D 100%) !important;
 }
