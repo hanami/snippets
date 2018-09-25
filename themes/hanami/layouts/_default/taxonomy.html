@@ -15,7 +15,6 @@
               {{if eq .Type "posts" }}
                 {{ $gem := index .Params.Gems 0 }}
                 {{ $icon := index .Site.Params.Icons $gem }}
-                {{ $color := index .Site.Params.Colors $gem }}
               <div class="col-lg-4">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
