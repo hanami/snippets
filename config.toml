@@ -8,6 +8,9 @@ theme = "hanami"
 pygmentscodefences = true
 pygmentsstyle = "dracula"
 
+[outputs]
+  home = ["HTML", "JSON"]
+
 [taxonomies]
    tag = "tags"
    gem = "gems"

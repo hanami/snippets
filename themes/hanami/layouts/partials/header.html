@@ -100,10 +100,17 @@
                 <span class="btn-inner--icon"><i class="fa fa-code"></i></span>
                 <span class="btn-inner--text">Main website</span>
               </a>
-              <a href="/discover" class="btn btn-white btn-icon mb-3 mb-sm-0">
-                <span class="btn-inner--icon text-primary"><i class="ni ni-compass-04"></i></span>
-                <span class="btn-inner--text text-primary">Discover snippets</span>
+              <a href="#" class="btn btn-white btn-icon mb-3 mb-sm-0" id="random-snippet-link">
+                <span class="btn-inner--icon text-primary"><i class="ni ni-atom"></i></span>
+                <span class="btn-inner--text text-primary">Random snippet</span>
               </a>
+              <noscript>
+              {{ $last := index .Pages 0 }}
+              <a href="{{ $last.URL }}" class="btn btn-white btn-icon mb-3 mb-sm-0" id="random-snippet-link">
+                <span class="btn-inner--icon text-primary"><i class="ni ni-bold-right"></i></span>
+                <span class="btn-inner--text text-primary">Latest snippet</span>
+              </a>
+              </noscript>
             </div>
               {{ end }}
             {{ end }}
