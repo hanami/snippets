@@ -1,3 +1,7 @@
+.headroom--not-top {
+  background-color: #00A388 !important;
+}
+
 .section-shaped .shape-hanami
 {
     background: linear-gradient(150deg, #00A388 15%, #79BD8F 70%, #BEEB9F 94%);
