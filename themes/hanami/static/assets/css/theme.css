@@ -1,3 +1,7 @@
+body {
+  color: #333;
+}
+
 .headroom--not-top {
   background-color: #00A388 !important;
 }
