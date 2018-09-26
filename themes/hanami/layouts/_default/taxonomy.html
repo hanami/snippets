@@ -11,8 +11,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <div class="row row-grid">
-              {{ range .Data.Pages }}
-              {{if eq .Type "posts" }}
+              {{ range where .Data.Pages "Type" "posts" }}
                 {{ $gem := index .Params.Gems 0 }}
                 {{ $icon := index .Site.Params.Icons $gem }}
               <div class="col-lg-4">
@@ -32,7 +31,14 @@
                   </div>
                 </div>
               </div>
-                {{ end }}
+              {{ else }}
+              <div class="col-lg-12">
+                <div class="card shadow border-0">
+                  <div class="card-body py-5">
+                    Oooops, no snippets for <span class="text-primary text-uppercase">{{ .Title }}</span>..
+                  </div>
+                </div>
+              </div>
               {{ end }}
             </div>
           </div>
