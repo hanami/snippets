@@ -21,6 +21,9 @@ ending=$((${fences[1]} - 1))
 # generate temporary code file
 sed -n "$((${fences[0]} + 1)),$((${fences[1]} - 1))p" $post > $code
 
-# rename with canonical name
+# generate image
+carbon-now $code -l $dir -t snippets
+
+# rename image with canonical name
 generated=$(find static -path "$dir/$snippet*")
 mv $generated $dir/$snippet.png
