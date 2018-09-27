@@ -15,6 +15,7 @@ Learn Hanami by reading, short, curated, manually crafted code snippets.
   1. Copy the `.carbon-now.json` into your home directory.
   1. Create a new post via `hugo new posts/my-cool-snippet.md`.
   1. Edit the contents. Make sure the first code snippet in the post is the **most representative** of the contents you want to share.
+  1. Start the server and see how the new post looks like: `bin/server`.
   1. Generate a new image for social sharing with `bin/export my-cool-snippet`. This must match the file name of the post.
   1. Open a Pull Request.
 
