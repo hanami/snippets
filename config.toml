@@ -4,6 +4,7 @@ copyright = "All rights reserved - 2018"
 paginate = 5
 languageCode = "en-us"
 theme = "hanami"
+googleAnalytics = "UA-47369640-2"
 
 pygmentscodefences = true
 pygmentsuseclasses = true
