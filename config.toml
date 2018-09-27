@@ -1,5 +1,5 @@
 baseURL = "https://snippets.hanamirb.org/"
-title = "Hanami | Snippets"
+title = "Hanami Snippets"
 copyright = "All rights reserved - 2018"
 paginate = 5
 languageCode = "en-us"

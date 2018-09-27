@@ -4,11 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {{ with .Description }}
-    <meta name="description" content="{{ . }}"> <!-- gem -->
+    <meta name="description"         content="Snippets for {{ $.Title }} gem: {{ . }}"> <!-- gem -->
+    <meta property="og:title"        content="{{ $.Title }} gem | {{ $.Site.Title }}" />
+    <meta property="og:description"  content="Snippets for {{ $.Title }} gem: {{ . }}" />
+    <meta name="twitter:title"       content="{{ $.Title }} gem | {{ $.Site.Title }}" />
+    <meta name="twitter:description" content="Snippets for {{ $.Title }} gem: {{ . }}" />
+    <meta property="og:image:alt"    content="Snippets for {{ $.Title }} gem: {{ . }}" />
+    <title>{{ $.Title }} gem | {{ $.Site.Title }}</title>
     {{ else }}
-    <meta name="description" content="Hanami snippets tagged with {{ .Title }}"> <!-- tag -->
+    <meta name="description"         content="Hanami snippets tagged with {{ .Title }}"> <!-- tag -->
+    <meta property="og:title"        content="{{ $.Title }} tag | {{ $.Site.Title }}" />
+    <meta property="og:description"  content="Hanami snippets tagged with {{ .Title }}" />
+    <meta name="twitter:title"       content="{{ $.Title }} tag | {{ $.Site.Title }}" />
+    <meta name="twitter:description" content="Hanami snippets tagged with {{ .Title }}" />
+    <meta property="og:image:alt"    content="Hanami snippets tagged with {{ .Title }}" />
+    <title>{{ $.Title }} tag | {{ $.Site.Title }}</title>
     {{ end }}
-    <title>{{ .Site.Title }} | {{ .Title }}</title>
+
+    <meta property="og:url"          content="{{ .Permalink }}" />
+    <meta property="og:type"         content="article" />
+    <meta property="og:locale"       content="en_US" />
+    <meta property="og:site_name"    content="{{ .Site.Title }}" />
+    <meta property="og:image"        content="{{ .Site.BaseURL }}assets/img/theme/promo-1.png" />
+    <meta property="og:image:type"   content="image/png" />
+    <meta property="og:image:width"  content="2968" />
+    <meta property="og:image:height" content="2968" />
+
+    <meta name="twitter:card"        content="summary" />
+    <meta name="twitter:site"        content="@{{ .Site.Params.twitter }}" />
+    <meta name="twitter:creator"     content="@{{ .Site.Params.twitter }}" />
+    <meta name="twitter:image"       content="{{ .Site.BaseURL }}assets/img/theme/promo-1.png" />
+
     {{ partial "head.html" . }}
   </head>
   <body>
