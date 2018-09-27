@@ -22,7 +22,7 @@ ending=$((${fences[1]} - 1))
 sed -n "$((${fences[0]} + 1)),$((${fences[1]} - 1))p" $post > $code
 
 # generate image
-carbon-now $code -l $dir -t snippets
+carbon-now $code -l $dir -t hanami-snippets
 
 # rename image with canonical name
 generated=$(find static -path "$dir/$snippet*")

@@ -1,0 +1,42 @@
+{
+  "latest-preset": {
+    "t": "lucario",
+    "bg": "#BEEB9F",
+    "wt": "none",
+    "wc": true,
+    "fm": "Hack",
+    "fs": "18px",
+    "ln": false,
+    "ds": true,
+    "dsyoff": "20px",
+    "dsblur": "68px",
+    "wa": true,
+    "lh": "100%",
+    "pv": "200px",
+    "ph": "100px",
+    "si": true,
+    "wm": false,
+    "es": "4x",
+    "type": "png"
+  },
+  "hanami-snippets": {
+    "t": "lucario",
+    "bg": "#BEEB9F",
+    "wt": "none",
+    "wc": true,
+    "fm": "Hack",
+    "fs": "18px",
+    "ln": false,
+    "ds": true,
+    "dsyoff": "20px",
+    "dsblur": "68px",
+    "wa": true,
+    "lh": "100%",
+    "pv": "200px",
+    "ph": "100px",
+    "si": true,
+    "wm": false,
+    "es": "4x",
+    "type": "png"
+  }
+}
