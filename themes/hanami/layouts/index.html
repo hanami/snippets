@@ -47,6 +47,9 @@
                     <h6 class="text-primary text-uppercase">{{ .Title }}</h6>
                     <p class="description mt-3">{{ .Status | truncate 100 }}</p>
                     <div>
+                      {{ range .Params.versions }}
+                      <a href="/versions/{{ . }}"><span class="badge badge-pill badge-version">Hanami v{{ . }}+</span></a>
+                      {{ end }}
                       {{ range .Params.Tags }}
                       <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-secondary">{{ . }}</span></a>
                       {{ end }}

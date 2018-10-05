@@ -15,6 +15,7 @@ pygmentsuseclasses = true
 [taxonomies]
    tag = "tags"
    gem = "gems"
+   version = "versions"
 
 [permalinks]
   posts = "/:slug/"

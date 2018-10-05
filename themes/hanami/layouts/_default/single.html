@@ -45,6 +45,9 @@
                     <h5 class="text-primary text-uppercase">{{ .Title }}</h5>
                     <p class="description mt-3">{{ .Content }}</p>
                     <div>
+                      {{ range .Params.versions }}
+                      <a href="/versions/{{ . }}"><span class="badge badge-pill badge-version">Hanami v{{ . }}+</span></a>
+                      {{ end }}
                       {{ range .Params.tags }}
                       <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-secondary">{{ . }}</span></a>
                       {{ end }}

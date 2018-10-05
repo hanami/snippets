@@ -6,6 +6,7 @@ status: "Do you know Hanami::Logger is a full featured logger for Ruby? It works
 draft: false
 gems: ["utils"]
 tags: ["logging"]
+versions: ["1.0"]
 ---
 
 Do you know `Hanami::Logger` is a full featured logger for Ruby? It works with several IO targets, several log levels, it can output JSON, it offers time or file size rotation policies and it's able to filter (nested) sensitive data.

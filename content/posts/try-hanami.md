@@ -6,6 +6,7 @@ date: 2018-09-13T14:04:21+02:00
 draft: false
 gems: ["hanami"]
 tags: ["shell"]
+versions: ["1.0"]
 ---
 
 Do you want to try Hanami? Run this command:
