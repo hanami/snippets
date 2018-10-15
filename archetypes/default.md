@@ -5,6 +5,7 @@ status: ""
 date: {{ .Date }}
 draft: true
 gems: ["hanami"]
-tags: []
+tags: [""]
+versions: [""]
 ---
 

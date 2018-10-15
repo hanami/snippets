@@ -6,6 +6,7 @@ status: "hanami-router is a fast, full featured, Rack compatible HTTP router for
 draft: false
 gems: ["router"]
 tags: ["http"]
+versions: ["1.0"]
 ---
 
 `hanami-router` is a fast, full featured, Rack compatible, HTTP router for Ruby.

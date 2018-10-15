@@ -81,7 +81,12 @@
         <div class="row">
           <div class="col-lg-6">
             {{ if eq .Kind "taxonomy" }}
-            <h1 class="display-3  text-white">{{ .Title | upper }} <!-- gem or tag -->
+            {{ if eq .Type "versions" }}
+            <h1 class="display-3 text-white">Hanami v{{ .Title }}+ <!-- version -->
+              <span>Snippets for Hanami version greater than {{ .Title }}.0</span>
+            {{ else }}
+            <h1 class="display-3 text-white">{{ .Title | upper }} <!-- gem or tag -->
+            {{ end }}
               {{ with .Params.description }}
               <span>{{ . }}</span>
               {{ end }}

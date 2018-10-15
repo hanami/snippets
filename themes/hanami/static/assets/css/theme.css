@@ -106,6 +106,20 @@ a.text-primary:focus
     background: linear-gradient(87deg, #FF6138 0, #FFFF9D 100%) !important;
 }
 
+.badge-version
+{
+    color: #79BD8F;
+    background-color: rgba(255, 255, 157, .5);
+}
+.badge-version[href]:hover,
+.badge-version[href]:focus
+{
+    text-decoration: none;
+
+    color: #fff;
+    background-color: #00A388;
+}
+
 div.highlight > pre {
   padding: 1em;
 }

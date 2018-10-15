@@ -6,6 +6,7 @@ date: 2018-09-17T11:34:38+02:00
 draft: false
 gems: ["cli"]
 tags: ["command line"]
+versions: ["1.1"]
 ---
 
 Build your full featured Ruby CLI in a minute

@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {{ with .Description }}
-    <meta name="description"         content="Snippets for {{ $.Title }} gem: {{ . }}"> <!-- gem -->
-    <meta property="og:title"        content="{{ $.Title }} gem | {{ $.Site.Title }}" />
-    <meta property="og:description"  content="Snippets for {{ $.Title }} gem: {{ . }}" />
-    <meta name="twitter:title"       content="{{ $.Title }} gem | {{ $.Site.Title }}" />
-    <meta name="twitter:description" content="Snippets for {{ $.Title }} gem: {{ . }}" />
-    <meta property="og:image:alt"    content="Snippets for {{ $.Title }} gem: {{ . }}" />
+    {{ if eq .Type "gems" }}
+    <meta name="description"         content="Snippets for {{ .Title }} gem: {{ .Description }}"> <!-- gem -->
+    <meta property="og:title"        content="{{ .Title }} gem | {{ .Site.Title }}" />
+    <meta property="og:description"  content="Snippets for {{ .Title }} gem: {{ .Description }}" />
+    <meta name="twitter:title"       content="{{ .Title }} gem | {{ .Site.Title }}" />
+    <meta name="twitter:description" content="Snippets for {{ .Title }} gem: {{ .Description }}" />
+    <meta property="og:image:alt"    content="Snippets for {{ .Title }} gem: {{ .Description }}" />
     <title>{{ $.Title }} gem | {{ $.Site.Title }}</title>
-    {{ else }}
+    {{ end }}
+    {{ if eq .Type "tags" }}
     <meta name="description"         content="Hanami snippets tagged with {{ .Title }}"> <!-- tag -->
     <meta property="og:title"        content="{{ $.Title }} tag | {{ $.Site.Title }}" />
     <meta property="og:description"  content="Hanami snippets tagged with {{ .Title }}" />
@@ -19,6 +20,14 @@
     <meta name="twitter:description" content="Hanami snippets tagged with {{ .Title }}" />
     <meta property="og:image:alt"    content="Hanami snippets tagged with {{ .Title }}" />
     <title>{{ $.Title }} tag | {{ $.Site.Title }}</title>
+    {{ end }}
+    {{ if eq .Type "versions" }}
+    <meta name="description"         content="Snippets for Hanami version greater than {{ .Title }}"> <!-- version -->
+    <meta property="og:title"        content="Hanami v{{ $.Title }}+ | {{ $.Site.Title }}" />
+    <meta property="og:description"  content="Snippets for Hanami version greater than {{ .Title }}" />
+    <meta name="twitter:title"       content="Hanami v{{ $.Title }}+ | {{ $.Site.Title }}" />
+    <meta name="twitter:description" content="Snippets for Hanami version greater than {{ .Title }}" />
+    <meta property="og:image:alt"    content="Snippets for Hanami version greater than {{ .Title }}" />
     {{ end }}
 
     <meta property="og:url"          content="{{ .Permalink }}" />
@@ -56,6 +65,9 @@
                     <h6 class="text-primary text-uppercase">{{ .Title }}</h6>
                     <p class="description mt-3">{{ .Status | truncate 100 }}</p>
                     <div>
+                      {{ range .Params.versions }}
+                      <a href="/versions/{{ . }}"><span class="badge badge-pill badge-version">Hanami v{{ . }}+</span></a>
+                      {{ end }}
                       {{ range .Params.Tags }}
                       <a href="/tags/{{ . | urlize }}"><span class="badge badge-pill badge-secondary">{{ . }}</span></a>
                       {{ end }}
