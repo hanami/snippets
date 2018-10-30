@@ -3,7 +3,7 @@ title: "Hanami::Repository Dynamic Ordering"
 preview: "Sort database records with parametrized order policy"
 status: "Learn how to support database records sorting based on user input"
 date: 2018-10-29T17:27:35+01:00
-draft: true
+draft: false
 gems: ["hanami"]
 tags: ["model"]
 versions: ["1.0"]
