@@ -3,7 +3,7 @@ title: "Hanami Repository Bulk Update"
 preview: "Update multiple database records at once"
 status: "Learn how to efficiently update a collection of records"
 date: 2018-10-30T15:45:16+01:00
-draft: true
+draft: false
 gems: ["hanami"]
 tags: ["model"]
 versions: ["1.0"]
