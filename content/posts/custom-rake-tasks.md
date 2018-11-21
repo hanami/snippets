@@ -9,7 +9,7 @@ tags: ["hanami", "rake"]
 versions: ["1.0"]
 ---
 
-If you want to add customer Rake tasks to your Hanami project, you have two ways: `Rakefile` and `.rake` files.
+If you want to add custom Rake tasks to your Hanami project, you have two ways: `Rakefile` and `.rake` files.
 
 ## Rakefile
 
