@@ -27,3 +27,5 @@ end
 ```
 
 Project initializers must be added under `config/initializers` and they are executed in **alphabetical order**.
+
+Read more at [https://guides.hanamirb.org/projects/initializers/](https://guides.hanamirb.org/projects/initializers/)
