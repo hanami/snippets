@@ -26,3 +26,5 @@ end
 ```
 
 All the HTTP requests starting with `/sinatra` will be routed to `SinatraApp`.
+
+Learn more at [Routing overview guide](https://guides.hanamirb.org/routing/overview/#rack).
