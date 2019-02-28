@@ -10,9 +10,36 @@ versions: ["1.0"]
 ---
 
 Hanami automatically handles exceptions for you. The default behaviour in production is to catch all exceptions and render an error HTML page. In the development and test environment exceptions are not caught by the framework's exception handling, instead you'll be presented with a stack trace for debugging.
-This behaviour can be changed in the `apps/[your_app_name]/application.rb` file, just look for `handle_exception` in the environment specific configuration blocks.
+
+You can define this behaviour in the `apps/[your_app_name]/application.rb` file, just look for the `handle_exceptions` setting in the environment specific configuration blocks and uncomment it. The comments reflect the default setting, i.e., if you want to change the behaviour, you'll need to change the setting from `true` to `false` or vice versa depending on the environment block.
+
+```ruby
+# apps/web/application.rb
+
+module Web
+  class Application < Hanami::Application
+    # ...
+
+    # Handle exceptions with HTTP statuses
+    handle_exceptions true
+
+    configure :test do
+      # Don't handle exceptions in tests, render the stack trace
+      handle_exceptions false
+    end
+
+    configure :development do
+      # Don't handle exceptions in development, render the stack trace
+      handle_exceptions false
+    end
+
+    # ...
+  end
+end
+```
 
 The default behaviour is fine if you are rendering HTML pages, however, for APIs you should always return responses in the respective format, e.g., JSON or XML.
+
 Let's assume you are implementing a JSON API for managing a Library. Your current task is to implement a checkout procedure and you need to decide what happens when two patrons try to borrow the last available copy of a book.
 Thanks to ACID guarantees of your database you are sure that when you book the last copy for one patron, the other will fail to book it. However, you need to gracefully handle this scenario.
 
@@ -82,12 +109,4 @@ end
 
 Or we could change it for just this one controller by adding `configure { handle_exceptions true }` to our controller. But then we'd also change it for the development environment. Which may not be what we want if our exception handling is more general. Usually we wish to see the stack trace in development mode.
 
-The third option is to change the exception handling only for tests by configuring the controller before running the test suite like this:
-
-```ruby
-InventoryApi::Controllers::Loans::Create.configure do
-  handle_exceptions true
-end
-```
-
-Put the above statement somewhere that's run before your test suite starts or at the beginning of the test file for the controller.
+If you want to know more about exception handling in Hanami, have a look at the [documentation](https://www.rubydoc.info/gems/hanami-controller/#Exceptions_management).
