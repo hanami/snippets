@@ -24,7 +24,7 @@ module InventoryApi
   module Controllers
     module Loans
       class Create
-        include Web::Action
+        include InventorApi::Action
 
         handle_exception Inventory::OutOfStock => :borrowing_failed
         expose :loan
