@@ -56,7 +56,7 @@ module InventoryApi
 end
 ```
 
-By calling `handle_exception Inventory::OutOfStock => :borrowing_failed` we tell Hanami to call `borrowing_failed` when the `Inventory::OutOfStock` exception is raised. The `borrowing_failed` method is then handed the exception object for further inspection, but we don't actually need that object in our example.
+By using `handle_exception Inventory::OutOfStock => :borrowing_failed` we tell Hanami to call `#borrowing_failed` when the `Inventory::OutOfStock` exception is raised. The `#borrowing_failed` method is then handed the exception object for further inspection, but we don't actually need that object in our example.
 Instead we simply render a [JSON:API](https://jsonapi.org/format/) error response to tell the client that no copy is left for borrowing.
 
 Since we wish to document that this actually works, we write a test for this behaviour. However, when we run our test the expected JSON response is not rendered, instead we are presented with a stack trace.
