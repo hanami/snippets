@@ -3,7 +3,7 @@ title: "Controller Exception Handling"
 preview: "Custom exception handling at the controller level"
 status: "Learn how to render custom error responses"
 date: 2019-01-27T15:33:41+01:00
-draft: true
+draft: false
 gems: ["hanami", "hanami-controller"]
 tags: ["controller", "api"]
 versions: ["1.0"]
